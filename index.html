@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uyi Godfrey's creative portfolio of photography and web design">
+  <link rel="icon" href="/images/uyi-logo-2.png" type="image/png">
+  <title>Uyi Godfrey - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --theme-color: #333;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #dae2eb;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+      cursor: url(/images/love.png), auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-links a:hover{
+      color: #ffd700;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar {
+      width: 30%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-image: url('/images/uyi.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 9000px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 15px;
+    }
+
+    .sidebar p {
+      font-size: 1.2rem;
+    }
+
+    .main-content {
+      margin-left: 40%;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--theme-color);
+      padding: 15px;
+      color: white;
+      align-items: center;
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      font-size: 1.1rem;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .navbar a:hover {
+      color: #ffd700; /* Changes text color when you hover */
+    }
+  
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .portfolio .images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .portfolio img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .about,
+    .contact,
+    .resume {
+      padding: 20px;
+      background-color: #fff;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .about .skill-bar {
+      background-color: #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      height: 20px;
+    }
+
+    .about .skill {
+      background-color: var(--theme-color);
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .contact button {
+      background-color: var(--theme-color);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      opacity: 0.9;
+    }
+
+    .contact-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .contact-section hr {
+      width: 60px;
+      border: 2px solid #333;
+      margin: 0 auto 40px;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+      font-size: 18px;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      background-color: var(--theme-color);
+      color: rgb(246, 15, 15);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer a i {
+
+      margin: 0 10px;
+      font-size: 1.5rem;
+    }
+
+    .footer a:hover {
+      color: #ddd;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      background-color: var(--theme-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    select {
+      margin-left: 10px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: rgb(245, 8, 8);
+    }
+
+    .dark-mode .about,
+    .dark-mode .contact,
+    .dark-mode .resume {
+      background-color: #333;
+    }
+
+
+    .dark-mode input,
+    .dark-mode textarea {
+      background-color: #444;
+      color: rgb(251, 250, 254);
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--theme-color);
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .portfolio .images {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 28px;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebc59;
+    }
+
+    .stats-section {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 30px 0;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .pricing-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .pricing-section h3 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    /* Grid */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Card */
+    .pricing-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      flex: 0 0 45%;
+      min-width: 300px;
+      max-width: 500px;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pricing-card li {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .pricing-card .header {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .header.basic {
+      background-color: #444;
+    }
+
+    .header.pro {
+      background-color: #000;
+    }
+
+    .price h2 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .price span {
+      opacity: 0.7;
+    }
+
+    /* Button */
+    .footer {
+      background-color: #eee;
+    }
+
+    .footer button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: white;
+      color: black;
+      border: 1px solid black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .footer button:hover {
+      background: black;
+      color: white;
+    }
+
+    body {
+      cursor: url('/images/loverl\ \(1\).png'), auto;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div>
+      <h2 >Uyi Godfrey Glory</h2>
+      <p>Photographer and Web Designer</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="navbar">
+      <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
+      </div>
+      <button onclick="toggleDarkMode()">Dark Mode</button>
+      <select onchange="changeThemeColor(this.value)">
+        <option value="#333">Dark</option>
+        <option value="#0066cc">Blue</option>
+        <option value="#228B22">Green</option>
+        <option value="#800080">Purple</option>
+      </select>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" style="padding: 60px;" data-aos="fade-up">
+      <h1 id="typing-text"></h1>
+      <p>I'm a passionate photographer and web designer. I specialize in creating visually stunning websites and
+        capturing beautiful moments through my lens. Whether it's designing sleek, user-friendly websites or shooting
+        vibrant photographs, I love bringing ideas to life and telling compelling stories. Let's collaborate and create
+        something amazing!</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio" data-aos="fade-up">
+      <h2>My Portfolio</h2>
+      <div class="images">
+        <img src="/images/wedding.jpg" alt="Wedding">
+        <img src="/images/rocks.jpg" alt="Rocks">
+        <img src="/images/sailboat.jpg" alt="Sailboat">
+        <img src="/images/nature.jpg" alt="Nature">
+        <img src="/images/graduation.jpg" alt="City">
+        <img src="/images/road.jpg" alt="Road">
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" data-aos="fade-up">
+      <h2>About</h2>
+      <p>I'm a creative individual with a love for photography and web design.</p>
+      <div class="skills">
+        <h3>My Skills</h3>
+        <p>Photography</p>
+        <div class="skill-bar">
+          <div class="skill" style="width: 95%;"></div>
+        </div>
+        <p>Web Design</p>
+        <div class="skill-bar">
+          <div class="skill" style="width: 85%;"></div>
+        </div>
+        <p>Photoshop</p>
+        <div class="skill-bar">
+          <div class="skill" style="width: 78%;"></div>
+        </div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stat-box">
+          <span class="stat-number">14+</span><br>
+          Partners
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">55+</span><br>
+          Projects Done
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">89+</span><br>
+          Happy Clients
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">150+</span><br>
+          Meetings
+        </div>
+      </div>
+
+      <section class="pricing-section">
+        <h3>My Price</h3>
+        <div class="pricing-grid">
+
+          <!-- Basic Plan -->
+          <div class="pricing-card">
+            <ul>
+              <li class="header basic">Basic</li>
+              <li>Web Design</li>
+              <li>Photography</li>
+              <li>5GB Storage</li>
+              <li>Mail Support</li>
+              <li class="price">
+                <h2>$10</h2>
+                <span>per month</span>
+              </li>
+              <li class="footer">
+                <button>Sign Up</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="pricing-card">
+            <ul>
+              <li class="header pro">Pro</li>
+              <li>Web Design</li>
+              <li>Photography</li>
+              <li>50GB Storage</li>
+              <li>Endless Support</li>
+              <li class="price">
+                <h2>$25</h2>
+                <span>per month</span>
+              </li>
+              <li class="footer">
+                <button>Sign Up</button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <h2>Contact Me</h2>
+      <hr>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><i class="fa fa-map-marker"></i> Abuja, Nigeria</p>
+          <p><i class="fa fa-phone"></i> +234 9033366693</p>
+          <p><i class="fa fa-envelope"></i> uyigodfrey23@gmail</p>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume" data-aos="fade-up">
+      <h2>Download My Resume</h2>
+      <a href="/resume/CV.pdf" download class="resume-btn">Download PDF</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://facebook.com/Uyi Godfrey" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/edo_diva_17" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-twitter"></i></a>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Typing effect
+    const text = "Welcome to My Portfolio";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Toggle dark mode
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Toggle mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    // Theme color changer
+    function changeThemeColor(color) {
+      document.documentElement.style.setProperty('--theme-color', color);
+    }
+  </script>
+
+  <a href="https://wa.me/2349033366693" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+
+</html>
