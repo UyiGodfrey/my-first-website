@@ -42,16 +42,6 @@ sudo systemctl enable apache2
 cd /var/www/html
 sudo rm index.html
 sudo nano index.html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My First AWS Website</title>
-</head>
-<body>
-  <h1>Hello from AWS EC2!</h1>
-  <p>This website is served from my EC2 instance.</p>
-</body>
-</html>
 Save and exit (Ctrl + O, then Enter, then Ctrl + X).
 
 Step 6: View Your Website
