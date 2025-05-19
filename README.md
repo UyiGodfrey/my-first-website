@@ -8,6 +8,7 @@
 - Click Create repository.
 
 ## Step 2: Set Up Git Locally and Make Your First Commit
+{
 - Open Git Bash on your computer:
 - mkdir my-first-project
 - cd my-first-project
@@ -15,6 +16,7 @@
 - git init
 - git add README.md
 - git commit -m "Initial commit with README"
+}
 
 ## Step 3: Link Your Local Repo to GitHub and Push
 - Copy the HTTPS URL of your GitHub repo (something like [https://github.com/youru>](https://github.com/youru>)
