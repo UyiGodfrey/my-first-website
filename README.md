@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Steps to Create a Repository and Deploy on EC2</title>
-</head>
-<body>
-    <h1>Steps Involved in Creating this Repository and Deploying a Simple Website</h1>
+<h1>Steps involved in creating this repository</h1>
 
-    <h2>Step 1: Create Your GitHub Repository</h2>
-    <ol>
-        <li>Go to <a href="https://github.com" target="_blank">github.com</a> and log in.</li>
-        <li>Click the + icon (top right) and select <strong>New repository</strong>.</li>
-        <li>Name it (e.g., <em>my-first-project</em>).</li>
-        <li>Leave <em>Initialize this repository with README</em> unchecked.</li>
-        <li>Click <strong>Create repository</strong>.</li>
-    </ol>
+##Step 1: Create Your GitHub Repository
+- Go to github.com and log in.
+- Click the + icon (top right) and select New repository.
+- Name it (e.g., my-first-project).
+- Leave Initialize this repository with README unchecked (we’ll d>
+- Click Create repository.
 
-    <h2>Step 2: Set Up Git Locally and Make Your First Commit</h2>
-    <pre>
-Open Git Bash on your computer and run the following:
-    
-mkdir my-first-project
-cd my-first-project
-echo "# My First Project" > README.md
-git init
-git add README.md
-git commit -m "Initial commit with README"
-    </pre>
+##Step 2: Set Up Git Locally and Make Your First Commit
+- Open Git Bash on your computer:
+- mkdir my-first-project
+- cd my-first-project
+- echo "# My First Project" > README.md
+- git init
+- git add README.md
+- git commit -m "Initial commit with README"
 
-    <h2>Step 3: Link Your Local Repo to GitHub and Push</h2>
-    <p>Copy the HTTPS URL of your GitHub repository (something like <code>https://github.com/yourusername/my-first-project.git</code>), then run:</p>
-    <pre>
-git remote add origin https://github.com/yourusername/my-first-project.git
+Step 3: Link Your Local Repo to GitHub and Push
+Copy the HTTPS URL of your GitHub repo (something like [https://github.com/youru>](https://github.com/youru>)
+git remote add origin [https://github.com/yourusername/my-first-project.git](https://github.com/yourusername/my-first-project.git)
 git branch -M main
-git push -u origin main
-    </pre>
+git push -u origin maintenance
 
-    <h2>Step 4: Launch an EC2 Instance and Connect via SSH</h2>
-    <ol>
-        <li>Go to AWS Console &gt; EC2 &gt; Launch Instance.</li>
-        <li>Select <strong>Ubuntu Server (latest LTS)</strong>.</li>
-        <li>Download your <code>.pem</code> key file.</li>
-        <li>Set the security group to allow ports 22 (SSH) and 80 (HTTP).</li>
-        <li>Launch the instance.</li>
-    </ol>
-    <p>Then connect using Git Bash:</p>
-    <pre>
-ssh -i /path/to/your-key.pem ubuntu@your-ec2-public-ip
-    </pre>
+Step 4: Launch an EC2 Instance and Connect via SSH
+•       Go to AWS Console > EC2 > Launch Instance
+•       Choose Ubuntu Server (latest LTS)
+•       Download your .pem key file
+•       Set security group to allow ports 22 (SSH) and 80 (HTTP)
+•       Launch the instance
 
-    <h2>Step 5: Install Apache and Deploy a Simple HTML Site</h2>
-    <pre>
+Then connect using Git Bash:
+ssh -i /path/to/your-key.pem ubuntu\@your-ec2-public-ip
+
+Step 5: Install Apache and Deploy a Simple HTML Site
 sudo apt update
 sudo apt install apache2 -y
 sudo systemctl start apache2
@@ -58,13 +40,12 @@ sudo systemctl enable apache2
 cd /var/www/html
 sudo rm index.html
 sudo nano index.html
-    </pre>
-    <p>Then save and exit the editor (Ctrl + O, Enter, then Ctrl + X).</p>
+Save and exit (Ctrl + O, then Enter, then Ctrl + X).
 
-    <h2>Step 6: View Your Website</h2>
-    <p>Open your browser and go to:</p>
-    <p><strong>http://your-ec2-public-ip</strong></p>
+Step 6: View Your Website
+Open your browser and go to:
+[http://your-ec2-public-ip](http://your-ec2-public-ip)
 
-</body>
-</html>
+edit this with html
+
 
