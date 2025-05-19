@@ -6,10 +6,10 @@
 - Name it (e.g., my-first-project).
 - Leave Initialize this repository with README unchecked (we’ll d>
 - Click Create repository.
+- Open Git Bash on your computer:
 
 ## Step 2: Set Up Git Locally and Make Your First Commit
 ```
-Open Git Bash on your computer:
 mkdir my-first-project
 cd my-first-project
 echo "# My First Project" > README.md
