@@ -1,4 +1,4 @@
-#Steps involved in creating this repository
+<h1>Steps involved in creating this repository</h1>
 
 Step 1: Create Your GitHub Repository
 	1.	Go to github.com and log in.
